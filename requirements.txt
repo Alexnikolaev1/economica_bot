@@ -1,0 +1,9 @@
+aiogram>=3.4,<4
+aiohttp>=3.9,<4
+aiosqlite>=0.19,<1
+matplotlib>=3.8,<4
+reportlab>=4.0,<5
+num2words>=0.5,<1
+openpyxl>=3.1,<4
+gspread>=6.0,<7
+google-auth>=2.0,<3

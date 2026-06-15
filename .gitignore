@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.env
+local.db
+/data/
+.venv/
+venv/
+*.xlsx
