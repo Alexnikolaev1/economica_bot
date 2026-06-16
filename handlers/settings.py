@@ -25,7 +25,7 @@ class SettingsStates(StatesGroup):
 
 EDITABLE_FIELDS = {
     "full_name": ("ФИО", "Введите ФИО (Иванов Иван Иванович):"),
-    "inn": ("ИНН", "Введите ИНН (10 или 12 цифр):"),
+    "inn": ("ИНН (для PDF-счетов)", "Введите ИНН (10 или 12 цифр):"),
     "tax_rate": ("Ставка налога (%)", "Ставка: 4 (физлица) или 6 (юрлица):"),
     "base_currency": ("Основная валюта", "Код валюты: RUB, USD, EUR..."),
     "bank_account": ("Банковские реквизиты", "Введите номер счёта / реквизиты:"),
@@ -46,7 +46,7 @@ def _profile_text(user: dict) -> str:
     return (
         "⚙️ <b>Настройки профиля</b>\n\n"
         f"👤 ФИО: {user.get('full_name') or '—'}\n"
-        f"🔢 ИНН: {user.get('inn') or '—'}\n"
+        f"🔢 ИНН (счета):     {user.get('inn') or '—'}\n"
         f"🏛️ Налог: {user.get('tax_rate', 6.0):.0f}%\n"
         f"💰 Валюта: {user.get('base_currency', 'RUB')}\n"
         f"🏦 Реквизиты: {user.get('bank_account') or '—'}\n"

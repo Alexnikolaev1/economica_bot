@@ -40,7 +40,8 @@ async def cmd_start(message: Message, db_path: str) -> None:
     await message.answer(WELCOME_TEXT, reply_markup=main_keyboard())
 
     user = await get_user(db_path, user_id)
-    if not user or not user.get("full_name") or not user.get("inn"):
+    if not user or not user.get("full_name"):
         await message.answer(
-            "📋 Профиль не заполнен. Укажите ФИО и ИНН: /settings"
+            "📋 Укажите ФИО в /settings.\n"
+            "ИНН нужен только для PDF-счетов (/invoice)."
         )
