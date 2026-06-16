@@ -15,7 +15,7 @@ COPY . .
 ENV PYTHONUNBUFFERED=1
 ENV DB_PATH=/data/local.db
 
-# Railway Volume: смонтируйте том в /data (без директивы VOLUME — Railway не поддерживает)
+# Постоянные данные: смонтируйте Railway-том в /data
 RUN mkdir -p /data
 
 EXPOSE 8080
